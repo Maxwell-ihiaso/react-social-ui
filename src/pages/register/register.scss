@@ -17,6 +17,10 @@
     min-height: 600px;
     overflow: hidden;
     margin: auto;
+      @include mobile {
+            flex-direction: column;
+            overflow: scroll;
+          }
 
     .left {
       flex: 1;

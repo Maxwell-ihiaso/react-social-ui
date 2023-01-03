@@ -20,6 +20,7 @@
 
     @include mobile {
         flex-direction: column;
+                    overflow: scroll;
       }
 
     .left {
