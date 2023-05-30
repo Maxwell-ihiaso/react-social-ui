@@ -24,11 +24,9 @@ const Login = () => {
     <div className="login">
       <div className="card">
         <div className="left">
-          <h1>Hello World.</h1>
+          <h1>tSocial</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
-            alias totam numquam ipsa exercitationem dignissimos, error nam,
-            consequatur.
+            A space to create memories and find time with friends family and well wishers..
           </p>
           <span>Don't have an account yet?</span>
           <Link to="/register">

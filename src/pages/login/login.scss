@@ -2,7 +2,11 @@
 
 .login {
   height: 100vh;
-  background-color: rgb(193, 190, 255);
+  // background-color: rgb(193, 190, 255);
+ background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1066%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(193%2c 190%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c300.786C58.866%2c302.508%2c117.727%2c291.966%2c168.865%2c262.759C221.707%2c232.579%2c263.507%2c187.07%2c292.643%2c133.646C323.281%2c77.468%2c348.874%2c14.479%2c338.729%2c-48.702C328.643%2c-111.515%2c273.757%2c-153.621%2c238.059%2c-206.279C196.713%2c-267.267%2c181.723%2c-357.801%2c112.35%2c-382.629C43.276%2c-407.35%2c-32.726%2c-363.448%2c-95.636%2c-325.705C-149.179%2c-293.582%2c-182.463%2c-239.58%2c-214.957%2c-186.261C-242.839%2c-140.511%2c-257.445%2c-90.861%2c-270.437%2c-38.883C-284.912%2c19.03%2c-315.888%2c78.818%2c-295.209%2c134.817C-274.273%2c191.514%2c-215.315%2c223.441%2c-162.631%2c253.06C-112.365%2c281.32%2c-57.64%2c299.099%2c0%2c300.786' fill='%23aca8ff'%3e%3c/path%3e%3cpath d='M1440 975.5350000000001C1515.414 962.797 1559.861 887.9639999999999 1624.661 847.338 1690.468 806.081 1784.812 802.491 1823.468 735.124 1862.3980000000001 667.278 1828.938 583.04 1820.966 505.225 1812.63 423.852 1821.812 336.673 1775.726 269.092 1727.6 198.519 1649.138 150.41500000000002 1565.906 131.202 1484.929 112.50999999999999 1404.052 142.62599999999998 1323.961 164.808 1242.621 187.336 1138.6689999999999 188.961 1095.498 261.487 1051.496 335.409 1123.074 427.707 1116.416 513.476 1110.412 590.816 1041.233 658.528 1058.811 734.083 1077.143 812.88 1142.025 874.023 1210.369 917.313 1278.4569999999999 960.441 1360.528 988.9580000000001 1440 975.5350000000001' fill='%23d6d4ff'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1066'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,7 +17,8 @@
     max-width: 950px;
     display: flex;
     background-color: white;
-    border-radius: 10px;
+   
+    border-radius: 50px;
     min-height: 600px;
     overflow: hidden;
     margin: auto;
@@ -25,17 +30,22 @@
 
     .left {
       flex: 1;
-      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
+      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 1)),
         url("https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600")
           center;
       background-size: cover;
       padding: 50px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 30px;
       color: white;
       @include tablet {
           padding: 30px;
+        }
+
+        p {
+          font-size: 1.3rem;
         }
 
       h1 {
@@ -47,8 +57,7 @@
             }
       }
       
-      p {
-      }
+      
 
       span {
         font-size: 14px;
@@ -61,6 +70,8 @@
         background-color: white;
         color: rebeccapurple;
         font-weight: bold;
+        border-radius: 0.2rem;
+        font-size: 1.2rem;
         cursor: pointer;
       }
     }
@@ -74,7 +85,7 @@
       justify-content: center;
 
       h1 {
-      color: #555;
+      color: rgb(44, 40, 114);
       }
       
       form {
@@ -87,14 +98,40 @@
         border-bottom: 1px solid lightgray;
         padding: 20px 10px;
         }
+
+         input::-webkit-input-placeholder {
+          color: rgb(44, 40, 114);
+}
+
+input::-ms-input-placeholder {
+          color: rgb(44, 40, 114);
+}
+
+input:-ms-input-placeholder {
+          color: rgb(44, 40, 114);
+}
+
+input::-moz-placeholder {/* Firefox 19+ */
+	opacity: 1;color: rgb(44, 40, 114);
+}
+
+input:-moz-placeholder {/* Firefox 18- */
+	opacity: 1;color: rgb(44, 40, 114);
+}
+
+input::placeholder {
+	color: rgb(44, 40, 114);
+}
         
         button {
           width: 50%;
           padding: 10px;
           border: none;
-          background-color: #938eef;
+          background-color: rgb(44, 40, 114);
           color: white;
           font-weight: bold;
+          border-radius: 0.2rem;
+        font-size: 1.2rem;
           cursor: pointer;
         }
       }
