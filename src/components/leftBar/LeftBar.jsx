@@ -103,27 +103,27 @@ const LeftBar = () => {
               src={currentUser.profilePic}
               alt=""
             />
-            <span>{currentUser.name}</span>
+            <span className="span__text">{currentUser.name}</span>
           </div>
           {itemMenu?.map((menu, index) => (<div className="item" key={index}>
             <img src={menu.imgIcon} alt={menu.alt} />
-            <span>{menu.text}</span>
+            <span className="span__text">{menu.text}</span>
           </div>))}
         </div>
         <hr />
         <div className="menu">
-          <span>Your shortcuts</span>
+          <span  className="span__text">Your shortcuts</span>
           {shortcuts?.map((shortcut, index) => ( <div className="item" key={index}>
             <img src={shortcut.imgIcon} alt={shortcut.alt} />
-            <span>{shortcut.text}</span>
+            <span className="span__text">{shortcut.text}</span>
           </div>))}
         </div>
         <hr />
         <div className="menu">
-          <span>Others</span>
+          <span className="span__text">Others</span>
           {others?.map((other, index) =>  (<div className="item" key={index}>
             <img src={other.imgIcon} alt={other.alt} />
-            <span>{other.text}</span>
+            <span className="span__text">{other.text}</span>
           </div>))}
         </div>
       </div>

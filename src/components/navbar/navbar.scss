@@ -39,6 +39,12 @@
           background-color: transparent;
           color: themed("textColor");
 
+          &:active,
+          &:focus {
+            outline: none;
+            border: none;
+          }
+
           @include mobile{
             display: none;
           }

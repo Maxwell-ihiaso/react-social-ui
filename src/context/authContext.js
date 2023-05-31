@@ -27,8 +27,13 @@ export const AuthContextProvider = ({ children }) => {
   }, [currentUser]);
 
   useEffect(() => {
+    let timeId;
+
     if (error.isError) {
-      setTimeout(() => setError({ isError: false, message: "" }), 3000);
+      timeId = setTimeout(() => setError({ isError: false, message: "" }), 3000);
+    }
+    return () => {
+      clearTimeout(timeId)
     }
   }, [error]);
 
