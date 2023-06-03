@@ -1,7 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import "./register.scss";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
+  const {currentUser} = useAuth()
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname ?? "/"
+
+    const handleRegister = (e) => {
+   
+    navigate("/login", {replace: true});
+    
+  };
+
+  if (currentUser) return <Navigate to={from} replace/>
+
   return (
     <div className="register">
       <div className="card">
@@ -22,7 +36,7 @@ const Register = () => {
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <input type="text" placeholder="Name" />
-            <button>Register</button>
+            <button type="submit" onClick={e => handleRegister(e)}>Register</button>
           </form>
         </div>
       </div>

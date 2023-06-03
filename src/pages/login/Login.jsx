@@ -1,24 +1,29 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom/dist";
-import { AuthContext } from "../../context/authContext";
 import "./login.scss";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const { login, error, errorMessage } = useContext(AuthContext);
+
+  const { login, error, errorMessage, currentUser } = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname ?? "/"
 
   const handleLogin = (e) => {
     e.preventDefault()
     if (!username && !password) return errorMessage("username & password cannot be empty")
-    if (!username || username === "") return errorMessage("username cannot be empty")
+    if (!username) return errorMessage("username cannot be empty")
     if (!password) return errorMessage("password cannot be empty")
     login(username);
-    navigate("/");
+    navigate("/", {replace: true});
     
   };
+
+  if (currentUser) return <Navigate to={from} replace/>
 
   return (
     <div className="login">
